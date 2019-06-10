@@ -1,12 +1,24 @@
 let c=document.querySelector('canvas');
-const second_duration = 8
-   const r=20
-let x= 0, 
-    y=window.innerHeight-r,
-    vx = 80,
-    vy = -35,
-    ay = 0.2,
-    pause = false
+const s_d = 8
+   const r1=20
+let x1= 0, 
+    y1=window.innerHeight-r1,
+    vx1 = 80,
+    vy1 = -35,
+    ay1 = 0.2,
+    pause1 = false
+ay1 /= s_d
+vx1 /= s_d
+vy1 /= s_d
+
+    const second_duration = s_d
+   const r=r1
+let x= x1, 
+    y=y1,
+    vx = vx1,
+    vy = vy1,
+    ay = ay1,
+    pause = pause1
 ay /= second_duration
 vx /= second_duration
 vy /= second_duration
@@ -61,5 +73,21 @@ window.addEventListener("keypress",e=>{
     } else if((e.key=='p'||e.key=='P'||e.key=='פ')&&pause==true){
         pause = false;
         animate();
+    }
+})
+window.addEventListener("keypress",a=>{
+    if((a.key=='r'||a.key=='R'||a.key=='ר')){
+        console.log("restart");
+        const second_duration = s_d;
+        const r=r1;   
+        x= x1;
+        y=y1;
+        vx = vx1;
+        vy = vy1;
+        ay = ay1;
+        pause = pause1;
+        ay /= second_duration;
+        vx /= second_duration;
+        vy /= second_duration;
     }
 })
